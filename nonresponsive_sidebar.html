@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grid Wireframe</title>
+    <title>Simple Flexbox Wireframe</title>
     <style>
         * {
             box-sizing: border-box;
@@ -18,38 +18,36 @@
         }
 
         .container {
-            display: grid;
-            grid-template-rows: 80px 1fr 50px;
-            grid-template-columns: 1fr 3fr;
-            grid-template-areas:
-                "header header"
-                "sidebar main"
-                "footer footer";
+            display: flex;
+            flex-direction: column;
             height: 100vh;
         }
 
         .header {
-            grid-area: header;
             background-color: #4CAF50;
             padding: 20px;
-            color: white;
             text-align: center;
+            color: white;
         }
 
-        .sidebar {
-            grid-area: sidebar;
-            background-color: #f1f1f1;
-            padding: 20px;
+        .content {
+            display: flex;
+            flex: 1;
         }
 
         .main {
-            grid-area: main;
-            background-color: #e0e0e0;
+            flex: 3;
             padding: 20px;
+            background-color: #e0e0e0;
+        }
+
+        .sidebar {
+            flex: 1;
+            padding: 20px;
+            background-color: #f1f1f1;
         }
 
         .footer {
-            grid-area: footer;
             background-color: #333;
             color: white;
             text-align: center;
@@ -64,14 +62,18 @@
         <div class="header">
             <h1>Wireframe Header</h1>
         </div>
-        <div class="sidebar">
-            <h2>Sidebar</h2>
-            <p>Links or additional content here</p>
+
+        <div class="content">
+            <div class="main">
+                <h2>Main Content</h2>
+                <p>This is the main content area.</p>
+            </div>
+            <div class="sidebar">
+                <h2>Sidebar</h2>
+                <p>This is the sidebar content.</p>
+            </div>
         </div>
-        <div class="main">
-            <h2>Main Content</h2>
-            <p>This is the main content area. Grid allows for a more structured layout.</p>
-        </div>
+
         <div class="footer">
             <p>Wireframe Footer</p>
         </div>
